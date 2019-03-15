@@ -1,0 +1,7 @@
+DEPENDENCIES
+  first_cookbook
+    path: .
+    metadata: true
+
+GRAPH
+  first_cookbook (1.7.5)
