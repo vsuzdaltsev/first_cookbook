@@ -1,0 +1,32 @@
+---
+driver:
+  name: vagrant
+
+transport:
+  name: sftp
+
+provisioner:
+  product_version: 14.4.56
+  product_name: chef
+  install_strategy: once
+  channel: stable
+  name: chef_zero
+  cookbooks_path: test/cookbooks/
+  data_bags_path: test/data_bags/
+
+platforms:
+  - name: centos-7.2
+
+verifier:
+  name: inspec
+  sudo: true
+
+suites:
+  - name: install_agent
+    run_list:
+      - recipe[first_cookbook::add_bind]
+    verifier:
+      inspec_tests:
+        - test/inspec/add_bind.rb
+    driver:
+      instance_name: first 
