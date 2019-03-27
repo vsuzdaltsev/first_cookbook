@@ -22,7 +22,7 @@ verifier:
   sudo: true
 
 suites:
-  - name: install_agent
+  - name: first_cookbook
     run_list:
       - recipe[first_cookbook::add_bind]
     verifier:
